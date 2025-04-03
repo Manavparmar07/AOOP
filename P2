@@ -1,0 +1,14 @@
+public class Main{
+  public static void main(String[] args) {
+     int a = 20;
+     int b = 10;
+     int c = 40;
+     if(a>b && a>c){
+         System.out.println("Max Number :- " + a);
+     }else if(b > a && b > c){
+         System.out.println("max Number:- " + b);
+     }else{
+         System.out.println("Max number:- " + c);
+     }
+  }   
+}
