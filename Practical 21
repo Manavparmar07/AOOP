@@ -1,0 +1,11 @@
+final class g1{
+    public void f1(){
+        System.out.println("this is final class");
+    }
+}
+public class Main{
+    public static void main(String[] args) {
+        g1 obj=new g1();
+        obj.f1();
+    }
+}
