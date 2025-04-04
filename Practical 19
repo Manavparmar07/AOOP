@@ -1,0 +1,30 @@
+interface Animal {
+    void eat();
+}
+
+
+interface Sound {
+    void makesound();
+}
+
+
+class Dog implements Animal, Sound {
+    @Override
+    public void eat() {
+        System.out.println("Dogs love to eat...");
+    }
+
+    @Override
+    public void makesound() {
+        System.out.println("Woof! Woof!");
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Dog obj = new Dog();
+        obj.eat();
+        obj.makesound();
+    }
+}
