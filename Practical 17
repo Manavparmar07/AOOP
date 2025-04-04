@@ -1,0 +1,22 @@
+class Animal {
+    public void makesound() {
+        System.out.println("Animal is making a barking");
+    }
+}
+
+class Dog extends Animal {
+    @Override // No semicolon here
+    public void makesound() {
+        System.out.println("Dog is sound");
+    }
+}
+
+public class MethodOverriding { // Class names should start with an uppercase letter
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        animal.makesound();
+
+        Dog dog = new Dog();
+        dog.makesound();
+    }
+}
