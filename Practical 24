@@ -1,0 +1,43 @@
+class MyException extends Exception {
+    MyException(String msg) {
+        super(msg);
+    }
+}
+
+public class StudentAccount {
+    double balance;  // Changed from 'accountBalance' to 'balance'
+
+    StudentAccount() {
+        this.balance = 0;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Amount deposited: " + amount);  // Minor change in message
+    }
+
+    public void withdraw(double amount) throws MyException {
+        if (amount > balance) {
+            throw new MyException("Not sufficient funds");
+        }
+        balance -= amount;
+        System.out.println("Successfully withdrawn: " + amount);  // Slight wording change
+    }
+
+    public void getBalance() {
+        System.out.println("Current balance: " + balance);  // Simplified message
+    }
+
+    public static void main(String[] args) {
+        StudentAccount sa = new StudentAccount();
+        try {
+            sa.deposit(25000);
+            sa.withdraw(20000);
+            sa.withdraw(4000);  // This will trigger an exception
+            sa.withdraw(2000);
+        } catch (MyException e) {
+            System.out.println(e.getMessage());
+            sa.getBalance();  // Added balance display after error
+        }
+    }
+}
