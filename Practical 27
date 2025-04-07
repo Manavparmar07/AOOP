@@ -1,0 +1,23 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+
+public class InputFile {
+    public static void main(String[] args) throws Exception {
+        String filepath = "sample.txt";
+
+        FileWriter writer = new FileWriter(filepath);
+        writer.write("Hello, how are you? I am Jash Gusani!!");
+        writer.close();
+        System.out.println("File written successfully.");
+
+        BufferedReader reader = new BufferedReader(new FileReader(filepath));
+        String line;
+
+        System.out.println("\nReading from file:");
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+        reader.close();
+    }
+}
