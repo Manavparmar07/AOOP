@@ -1,0 +1,28 @@
+import java.util.HashMap;
+
+public class P30 {
+    public static void main(String[] args) {
+        HashMap<String, String> students = new HashMap<>();
+
+        students.put("ENR001", "Alien");
+        students.put("ENR002", "Bob");
+        students.put("ENR003", "Charlie");
+        students.put("ENR004", "David");
+        students.put("ENR005", "Emma");
+
+        System.out.println("Student Records:");
+
+        for (String enrollmentNo : students.keySet()) {
+            System.out.println("Enrollment No: " + enrollmentNo + " | Name: " + students.get(enrollmentNo));
+        }
+
+        String searchEnrollment = "ENR003";
+        System.out.println("\nRetrieving student with Enrollment No: " + searchEnrollment);
+
+        if (students.containsKey(searchEnrollment)) {
+            System.out.println("Student Name: " + students.get(searchEnrollment));
+        } else {
+            System.out.println("Student with Enrollment No " + searchEnrollment + " not found.");
+        }
+    }
+}
